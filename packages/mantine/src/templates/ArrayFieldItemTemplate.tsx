@@ -33,7 +33,7 @@ export default function ArrayFieldItemTemplate<
     <div className={`armt-template-arrayfielditem ${className}`}>
       {children}
       {hasToolbar && (hasMoveUp || hasMoveDown || hasRemove || hasCopy) && (
-        <Group>
+        <Group spacing={0}>
           {(hasMoveUp || hasMoveDown) && (
             <MoveUpButton
               className='armt-template-afit-move-up'

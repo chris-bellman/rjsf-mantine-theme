@@ -8,6 +8,8 @@ import {
   StrictRJSFSchema,
 } from '@rjsf/utils';
 
+import { Group, Fieldset, Box, Stack } from '@mantine/core';
+
 /** The `ArrayFieldTemplate` component is the template used to render all items in an array.
  *
  * @param props - The `ArrayFieldTemplateItemType` props for the component
@@ -27,69 +29,72 @@ export default function ArrayFieldTemplate<
     onAddClick,
     readonly,
     registry,
-    // required,
-    // schema,
-    // title,
+    required,
+    schema,
+    title,
   } = props;
   const uiOptions = getUiOptions<T, S, F>(uiSchema);
-  // const ArrayFieldDescriptionTemplate = getTemplate<'ArrayFieldDescriptionTemplate', T, S, F>(
-  //   'ArrayFieldDescriptionTemplate',
-  //   registry,
-  //   uiOptions,
-  // );
+  const ArrayFieldDescriptionTemplate = getTemplate<'ArrayFieldDescriptionTemplate', T, S, F>(
+    'ArrayFieldDescriptionTemplate',
+    registry,
+    uiOptions,
+  );
   const ArrayFieldItemTemplate = getTemplate<'ArrayFieldItemTemplate', T, S, F>(
     'ArrayFieldItemTemplate',
     registry,
     uiOptions,
   );
-  // const ArrayFieldTitleTemplate = getTemplate<'ArrayFieldTitleTemplate', T, S, F>(
-  //   'ArrayFieldTitleTemplate',
-  //   registry,
-  //   uiOptions,
-  // );
+  const ArrayFieldTitleTemplate = getTemplate<'ArrayFieldTitleTemplate', T, S, F>(
+    'ArrayFieldTitleTemplate',
+    registry,
+    uiOptions,
+  );
   // Button templates are not overridden in the uiSchema
   const {
     ButtonTemplates: { AddButton },
   } = registry.templates;
 
-  // const _title = uiOptions.title || title;
-  // const legendNode = (
-  //   <Group h='xs'>
-  //     {title && (
-  //       <ArrayFieldTitleTemplate
-  //         idSchema={idSchema}
-  //         title={_title}
-  //         required={required}
-  //         schema={schema}
-  //         uiSchema={uiSchema}
-  //         registry={registry}
-  //       />
-  //     )}
+  const _title = uiOptions.title || title;
 
-  //     <ArrayFieldDescriptionTemplate
-  //       idSchema={idSchema}
-  //       description={uiOptions.description || schema.description}
-  //       schema={schema}
-  //       uiSchema={uiSchema}
-  //       registry={registry}
-  //     />
-  //   </Group>
-  // );
   return (
-    <div
+    <Box
       id={idSchema.$id}
       style={{
         width: '100%',
       }}
       className={`armt-template-arrayfield ${className}`}
     >
-      {items &&
-        items.map(({ key, ...itemProps }: ArrayFieldTemplateItemType<T, S, F>) => (
-          <ArrayFieldItemTemplate key={key} {...itemProps} />
-        ))}
-      {canAdd && (
-        <AddButton onClick={onAddClick} disabled={disabled || readonly} uiSchema={uiSchema} registry={registry} />
-      )}
-    </div>
+      <Group spacing='xs'>
+        <div>
+          {title && (
+            <ArrayFieldTitleTemplate
+              idSchema={idSchema}
+              title={_title}
+              required={required}
+              schema={schema}
+              uiSchema={uiSchema}
+              registry={registry}
+            />
+          )}
+
+          <ArrayFieldDescriptionTemplate
+            idSchema={idSchema}
+            description={uiOptions.description || schema.description}
+            schema={schema}
+            uiSchema={uiSchema}
+            registry={registry}
+          />
+        </div>
+        <div>
+          {items &&
+            items.map(({ key, ...itemProps }: ArrayFieldTemplateItemType<T, S, F>) => (
+              <ArrayFieldItemTemplate key={key} {...itemProps} />
+            ))}
+          {canAdd && (
+            <AddButton onClick={onAddClick} disabled={disabled || readonly} uiSchema={uiSchema} registry={registry} />
+          )}
+        </div>
+      </Group>
+    </Box>
   );
 }
