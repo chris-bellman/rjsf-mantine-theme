@@ -50,5 +50,6 @@
     "type": "git",
     "url": "git+https://github.com/AokiApp/rjsf-mantine-theme.git"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "gitHead": "8084bac565fc0d4683d7d3af16263b78091e5a1e"
 }
