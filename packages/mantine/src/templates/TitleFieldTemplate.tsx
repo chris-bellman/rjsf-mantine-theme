@@ -23,6 +23,7 @@ export default function TitleField<T = any, S extends StrictRJSFSchema = RJSFSch
       size='sm'
       fw={500}
       role='heading'
+      pt='xs'
       style={{
         flexGrow: 0,
         flexShrink: 0,

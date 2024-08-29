@@ -1,6 +1,6 @@
 {
   "name": "@chris-bellman/rjsf-mantine-5-theme",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": "./dist/index.cjs",
   "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",

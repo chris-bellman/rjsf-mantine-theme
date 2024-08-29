@@ -8,7 +8,7 @@ import {
   StrictRJSFSchema,
 } from '@rjsf/utils';
 
-import { Group, Fieldset, Box, Stack } from '@mantine/core';
+import { Group, Box, Stack } from '@mantine/core';
 
 /** The `ArrayFieldTemplate` component is the template used to render all items in an array.
  *
@@ -64,7 +64,7 @@ export default function ArrayFieldTemplate<
       }}
       className={`armt-template-arrayfield ${className}`}
     >
-      <Group spacing='xs'>
+      <Group spacing='lg'>
         <div>
           {title && (
             <ArrayFieldTitleTemplate
@@ -85,7 +85,7 @@ export default function ArrayFieldTemplate<
             registry={registry}
           />
         </div>
-        <div>
+        <Stack spacing='xs' w='100%'>
           {items &&
             items.map(({ key, ...itemProps }: ArrayFieldTemplateItemType<T, S, F>) => (
               <ArrayFieldItemTemplate key={key} {...itemProps} />
@@ -93,7 +93,7 @@ export default function ArrayFieldTemplate<
           {canAdd && (
             <AddButton onClick={onAddClick} disabled={disabled || readonly} uiSchema={uiSchema} registry={registry} />
           )}
-        </div>
+        </Stack>
       </Group>
     </Box>
   );
