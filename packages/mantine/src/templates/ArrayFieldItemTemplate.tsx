@@ -1,5 +1,5 @@
 import { ArrayFieldTemplateItemType, FormContextType, RJSFSchema, StrictRJSFSchema } from '@rjsf/utils';
-import { Group, Box } from '@mantine/core';
+import { Group } from '@mantine/core';
 
 /** The `ArrayFieldItemTemplate` component is the template used to render an items of an array.
  *
@@ -30,10 +30,10 @@ export default function ArrayFieldItemTemplate<
   const { CopyButton, MoveDownButton, MoveUpButton, RemoveButton } = registry.templates.ButtonTemplates;
 
   return (
-    <Box className={`armt-template-arrayfielditem ${className}`}>
+    <div className={`armt-template-arrayfielditem ${className}`}>
       {children}
       {hasToolbar && (hasMoveUp || hasMoveDown || hasRemove || hasCopy) && (
-        <Group justify='flex-end'>
+        <Group>
           {(hasMoveUp || hasMoveDown) && (
             <MoveUpButton
               className='armt-template-afit-move-up'
@@ -72,6 +72,6 @@ export default function ArrayFieldItemTemplate<
           )}
         </Group>
       )}
-    </Box>
+    </div>
   );
 }

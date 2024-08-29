@@ -9,7 +9,7 @@ import {
 } from '@rjsf/utils';
 import { useCallback } from 'react';
 
-import { DatePickerInput } from '@mantine/dates';
+import { DatePicker } from '@mantine/dates';
 import { createErrors } from '../utils/createErrors';
 
 /** The `DateWidget` component uses the `BaseInputTemplate` changing the type to `date` and transforms
@@ -52,7 +52,7 @@ export default function MantineDateWidget<
 
   const description = options.description || schema.description;
   return (
-    <DatePickerInput
+    <DatePicker
       value={inputValue}
       onChange={onChangeOverride || _onChange}
       key={id}

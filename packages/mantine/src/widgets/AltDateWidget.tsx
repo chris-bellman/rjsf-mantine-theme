@@ -142,7 +142,7 @@ function AltDateWidget<T = any, S extends StrictRJSFSchema = RJSFSchema, F exten
   );
 
   return (
-    <Stack className={`armt-widget-altdate ${className ?? ''}`} gap='xs'>
+    <Stack className={`armt-widget-altdate ${className ?? ''}`} spacing='xs'>
       <Grid>
         {getDateElementProps(
           state,
@@ -166,7 +166,7 @@ function AltDateWidget<T = any, S extends StrictRJSFSchema = RJSFSchema, F exten
           </Grid.Col>
         ))}
       </Grid>
-      <Group justify='flex-end'>
+      <Group>
         {(options.hideNowButton !== 'undefined' ? !options.hideNowButton : true) && (
           <Button variant='filled' onClick={handleSetNow}>
             {translateString(TranslatableString.NowLabel)}

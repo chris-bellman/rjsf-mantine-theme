@@ -1,10 +1,10 @@
 {
-  "name": "@aokiapp/rjsf-mantine-theme",
+  "name": "@chris-bellman/rjsf-mantine-5-theme",
   "version": "0.4.1",
   "main": "./dist/index.cjs",
   "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
-  "description": "Mantine theme, fields and widgets for react-jsonschema-form",
+  "description": "Mantine 5 theme, fields and widgets for react-jsonschema-form. Based on @aokiapp/rjsf-mantine-theme",
   "files": [
     "dist",
     "lib"
@@ -21,9 +21,9 @@
     "node": ">=20"
   },
   "peerDependencies": {
-    "@mantine/core": ">=7.4.0",
-    "@mantine/dates": ">=7.4.0",
-    "@mantine/hooks": ">=7.4.0",
+    "@mantine/core": "^5.10.4",
+    "@mantine/dates": "^5.10.4",
+    "@mantine/hooks": "^5.10.4",
     "@rjsf/core": ">=5.16.1",
     "@rjsf/utils": ">=5.16.1",
     "@tabler/icons-react": ">=2.45.0",
@@ -33,7 +33,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Yuki Aoki<me@aoki.app>",
+  "author": "Chris Bellman",
   "contributors": [],
   "keywords": [
     "react-jsonschema-form",

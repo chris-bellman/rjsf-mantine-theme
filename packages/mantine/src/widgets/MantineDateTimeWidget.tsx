@@ -8,7 +8,7 @@ import {
 } from '@rjsf/utils';
 import { useCallback } from 'react';
 
-import { DateTimePicker } from '@mantine/dates';
+import { DatePicker } from '@mantine/dates';
 import { createErrors } from '../utils/createErrors';
 
 /** The `DateTimeWidget` component uses the `BaseInputTemplate` changing the type to `datetime-local` and transforms
@@ -45,8 +45,8 @@ export default function MantineDateTimeWidget<
 
   const _onChange = useCallback((value: Date | null) => onChange(value ? value.toJSON() : undefined), [onChange]);
   return (
-    <DateTimePicker
-      withSeconds
+    <DatePicker
+      // withSeconds
       value={inputValue}
       onChange={onChangeOverride || _onChange}
       key={id}

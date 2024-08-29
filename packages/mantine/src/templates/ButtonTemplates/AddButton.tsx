@@ -18,7 +18,8 @@ export default function AddButton<T = any, S extends StrictRJSFSchema = RJSFSche
       color={color as ButtonProps['color']}
       variant='light'
       {...props}
-      leftSection={<IconPlus />}
+      leftIcon={<IconPlus />}
+      // leftSection={<IconPlus />}
     >
       {translateString(TranslatableString.AddItemButton)}
     </Button>

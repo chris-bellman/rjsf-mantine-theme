@@ -2,9 +2,6 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/playground"
-    },
-    {
       "path": "./packages/mantine"
     }
   ]

@@ -50,7 +50,7 @@ export default function UpDownWidget<T = any, S extends StrictRJSFSchema = RJSFS
   const overrideProps = typeof options['props'] === 'object' ? options['props'] : {};
 
   const _onChange = useCallback(
-    (e: string | number) => {
+    (e: number) => {
       const callTarget = onChangeOverride || onChange;
       callTarget(e);
     },

@@ -27,7 +27,7 @@ export default function BaseInputTemplate<
 >(props: BaseInputTemplateProps<T, S, F>) {
   const {
     id,
-    placeholder,
+    // placeholder,
     label,
     hideLabel,
     value,
@@ -80,7 +80,7 @@ export default function BaseInputTemplate<
       <InputComponent
         key={id}
         id={id}
-        placeholder={placeholder}
+        // placeholder={placeholder}
         description={description}
         {...inputProps}
         label={labelValue(label, hideLabel, undefined)}

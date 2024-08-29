@@ -1,4 +1,4 @@
-import { Fieldset, Group, Box } from '@mantine/core';
+import { Box } from '@mantine/core';
 import {
   FormContextType,
   ObjectFieldTemplatePropertyType,
@@ -6,11 +6,11 @@ import {
   RJSFSchema,
   StrictRJSFSchema,
   canExpand,
-  getTemplate,
+  // getTemplate,
   getUiOptions,
-  titleId,
+  // titleId,
 } from '@rjsf/utils';
-import { useFieldContext } from './FieldTemplate';
+// import { useFieldContext } from './FieldTemplate';
 
 /** The `ObjectFieldTemplate` is the template to use to render all the inner properties of an object along with the
  * title and description if available. If the object is expandable, then an `AddButton` is also rendered after all
@@ -31,15 +31,15 @@ export default function ObjectFieldTemplate<
     properties,
     readonly,
     registry,
-    required,
+    // required,
     schema,
-    title,
+    // title,
     uiSchema,
   } = props;
 
-  const { description } = useFieldContext();
+  // const { description } = useFieldContext();
   const options = getUiOptions<T, S, F>(uiSchema);
-  const TitleFieldTemplate = getTemplate<'TitleFieldTemplate', T, S, F>('TitleFieldTemplate', registry, options);
+  // const TitleFieldTemplate = getTemplate<'TitleFieldTemplate', T, S, F>('TitleFieldTemplate', registry, options);
 
   // Button templates are not overridden in the uiSchema
   const {
@@ -48,25 +48,24 @@ export default function ObjectFieldTemplate<
 
   const classNames = options.classNames;
 
-  const legendNode = (
-    <Group gap='xs' className='armt-template-objectfield-legend'>
-      {title && (
-        <TitleFieldTemplate
-          id={titleId<T>(idSchema)}
-          title={title}
-          required={required}
-          schema={schema}
-          uiSchema={uiSchema}
-          registry={registry}
-        />
-      )}
-      {description}
-    </Group>
-  );
+  // const legendNode = (
+  //   <Group spacing='xs' className='armt-template-objectfield-legend'>
+  //     {title && (
+  //       <TitleFieldTemplate
+  //         id={titleId<T>(idSchema)}
+  //         title={title}
+  //         required={required}
+  //         schema={schema}
+  //         uiSchema={uiSchema}
+  //         registry={registry}
+  //       />
+  //     )}
+  //     {description}
+  //   </Group>
+  // );
   return (
-    <Fieldset
+    <div
       id={idSchema.$id}
-      legend={legendNode}
       style={{
         width: '100%',
       }}
@@ -84,6 +83,6 @@ export default function ObjectFieldTemplate<
           registry={registry}
         />
       )}
-    </Fieldset>
+    </div>
   );
 }

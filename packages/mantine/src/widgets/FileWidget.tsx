@@ -150,7 +150,7 @@ function FilesInfo() {
         const { name, size } = fileInfo;
         const rmFile = () => onRemove(key);
         return (
-          <Card key={key} shadow='sm' padding='xs' radius='md' w={200} withBorder>
+          <Card key={key} shadow='sm' p='xs' radius='md' w={200} withBorder>
             <Card.Section>
               <AspectRatio ratio={2} maw={240} mx='auto'>
                 <FileInfoPreview fileInfo={fileInfo} />
@@ -159,7 +159,7 @@ function FilesInfo() {
             <Text fw={600} truncate='end'>
               {name}
             </Text>
-            <Group gap='xs' justify='space-between'>
+            <Group spacing='xs'>
               <Badge color='blue' variant='light'>
                 {convertUnitPrefix(size)}
               </Badge>

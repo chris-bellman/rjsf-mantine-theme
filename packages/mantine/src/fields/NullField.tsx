@@ -34,7 +34,7 @@ function NullField<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends F
 
   const { title } = schema;
   const { widgets, formContext, schemaUtils, globalUiOptions } = registry;
-  const { widget = 'NullWidget', placeholder = '', title: uiTitle, ...options } = getUiOptions<T, S, F>(uiSchema);
+  const { widget = 'NullWidget', title: uiTitle, ...options } = getUiOptions<T, S, F>(uiSchema);
   const displayLabel = schemaUtils.getDisplayLabel(schema, uiSchema, globalUiOptions);
   const label = uiTitle ?? title ?? name;
   const Widget = getWidget<T, S, F>(schema, widget, widgets);
@@ -65,7 +65,7 @@ function NullField<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends F
       formContext={formContext}
       autofocus={autofocus}
       registry={registry}
-      placeholder={placeholder}
+      // placeholder={placeholder}
       rawErrors={rawErrors}
     />
   );

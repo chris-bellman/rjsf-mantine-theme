@@ -86,7 +86,7 @@ function SelectWidget<T = any, S extends StrictRJSFSchema = RJSFSchema, F extend
     return (
       <Select
         allowDeselect
-        checkIconPosition='right'
+        // checkIconPosition='right'
         clearable={!required}
         data={(enumOptions || []).map(({ value, label }, i) => {
           const disabled = enumDisabled && enumDisabled.indexOf(value) !== -1;
