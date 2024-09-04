@@ -11,10 +11,9 @@ export default function AddButton<T = any, S extends StrictRJSFSchema = RJSFSche
   color,
   ...props
 }: IconButtonProps<T, S, F>) {
-  const { translateString } = registry;
   return (
     <Button
-      title={translateString(TranslatableString.AddItemButton)}
+      title=''
       color={color as ButtonProps['color']}
       variant='light'
       {...props}
