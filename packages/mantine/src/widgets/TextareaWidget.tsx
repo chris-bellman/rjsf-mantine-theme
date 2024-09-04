@@ -62,7 +62,7 @@ export default function TextareaWidget<
       onFocus={_onFocus}
       aria-describedby={ariaDescribedByIds<T>(id)}
       description={description}
-      autosize
+      autosize={true}
       minRows={5}
     />
   );
