@@ -10,7 +10,7 @@ function IconButton<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends 
   return (
     <ActionIcon
       size={iconType as ButtonProps['size']}
-      variant='light'
+      variant='filled'
       color={color as ButtonProps['color']}
       aria-label={title}
       title={title}

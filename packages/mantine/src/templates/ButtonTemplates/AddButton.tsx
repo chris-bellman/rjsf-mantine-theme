@@ -20,8 +20,6 @@ export default function AddButton<T = any, S extends StrictRJSFSchema = RJSFSche
       {...props}
       leftIcon={<IconPlus />}
       // leftSection={<IconPlus />}
-    >
-      {translateString(TranslatableString.AddItemButton)}
-    </Button>
+    ></Button>
   );
 }
