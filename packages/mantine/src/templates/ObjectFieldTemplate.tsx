@@ -68,6 +68,7 @@ export default function ObjectFieldTemplate<
       id={idSchema.$id}
       style={{
         width: '100%',
+        marginBottom: '12px',
       }}
       className={`armt-template-objectfield ${classNames ?? ''}`}
     >
