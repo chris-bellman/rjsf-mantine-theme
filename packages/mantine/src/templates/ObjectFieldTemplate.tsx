@@ -48,21 +48,6 @@ export default function ObjectFieldTemplate<
 
   const classNames = options.classNames;
 
-  // const legendNode = (
-  //   <Group spacing='xs' className='armt-template-objectfield-legend'>
-  //     {title && (
-  //       <TitleFieldTemplate
-  //         id={titleId<T>(idSchema)}
-  //         title={title}
-  //         required={required}
-  //         schema={schema}
-  //         uiSchema={uiSchema}
-  //         registry={registry}
-  //       />
-  //     )}
-  //     {description}
-  //   </Group>
-  // );
   return (
     <div
       id={idSchema.$id}
