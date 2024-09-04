@@ -1,7 +1,7 @@
 import { Button, ButtonProps } from '@mantine/core';
 import { IconPlus } from '@tabler/icons-react';
 
-import { FormContextType, IconButtonProps, RJSFSchema, StrictRJSFSchema, TranslatableString } from '@rjsf/utils';
+import { FormContextType, IconButtonProps, RJSFSchema, StrictRJSFSchema } from '@rjsf/utils';
 
 /** The `AddButton` renders a button that represent the `Add` action on a form
  */
