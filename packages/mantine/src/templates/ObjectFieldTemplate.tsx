@@ -1,4 +1,4 @@
-import { Box } from '@mantine/core';
+import { Box, Stack } from '@mantine/core';
 import {
   FormContextType,
   ObjectFieldTemplatePropertyType,
@@ -72,7 +72,7 @@ export default function ObjectFieldTemplate<
       className={`armt-template-objectfield ${classNames ?? ''}`}
     >
       <Box className='armt-template-objectfield-item'>
-        {properties.map((prop: ObjectFieldTemplatePropertyType) => prop.content)}
+        <Stack spacing='xs'>{properties.map((prop: ObjectFieldTemplatePropertyType) => prop.content)}</Stack>
       </Box>
       {canExpand<T, S, F>(schema, uiSchema, formData) && (
         <AddButton
